@@ -1,38 +1,16 @@
 import styled from "styled-components";
 
-type ITableHead = {
-  width: number;
-};
-
 type ITableData = {
   textAlign?: string;
+  uppercase?: boolean;
 };
 
-export const TodosTable = styled.table`
-  table-layout: fixed;
-  width: 60%;
-  border-collapse: collapse;
-  word-wrap: break-word;
-`;
-
-export const Thead = styled.thead`
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.secondary};
-`;
-
-export const Tbody = styled.tbody``;
-
-export const Th = styled.th<ITableHead>`
-  padding: 1rem;
-  width: ${({ width }) => `${width}%`};
-  border: 1px solid ${({ theme }) => theme.colors.secondary};
-`;
-
 export const Td = styled.td<ITableData>`
-  padding: 1rem;
+  padding: 1rem 0.8rem;
   text-align: ${({ textAlign }) => textAlign || "left"};
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.text};
+  text-transform: ${({ uppercase }) => (uppercase ? "uppercase" : "lowercase")};
 `;
 
 export const TableActionButton = styled.button`
@@ -40,7 +18,7 @@ export const TableActionButton = styled.button`
   border: none;
   font-size: 0.9rem;
   display: inline-flex;
-  padding: 0.2rem;
+  padding: 0.3rem;
   border: 1px solid ${({ theme }) => theme.colors.text};
   color: ${({ theme }) => theme.colors.text};
 
