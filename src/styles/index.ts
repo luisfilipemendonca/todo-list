@@ -16,7 +16,7 @@ export default GlobalStyle;
 
 export const MainContainer = styled.main`
   display: flex;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1100px;
   margin: 2rem auto;
-  border: 1px solid red;
 `;

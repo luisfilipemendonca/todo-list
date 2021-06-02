@@ -4,6 +4,8 @@ import { ThemeContext } from "./context/ThemeContext";
 import { useContext } from "react";
 
 import Navbar from "./components/Navbar";
+import Form from "./components/Form";
+import Todos from "./components/Todos";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -12,10 +14,8 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Navbar />
       <MainContainer>
-        <form>
-          <input type="text" />
-        </form>
-        <div>Ola</div>
+        <Form />
+        <Todos />
       </MainContainer>
       <GlobalStyle />
     </ThemeProvider>

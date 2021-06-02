@@ -7,7 +7,7 @@ const dark: ITheme = {
     // background: "#d8dbe2",
     primary: "#373f51",
     secondary: "#daa49a",
-    text: "#373f51",
+    text: "#d8dbe2",
   },
 };
 
