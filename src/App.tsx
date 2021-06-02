@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import GlobalStyle, { MainContainer } from "./styles";
+import { ThemeContext } from "./context/ThemeContext";
+import { useContext } from "react";
 
-function App() {
+import Navbar from "./components/Navbar";
+
+const App = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Navbar />
+      <MainContainer>
+        <form>
+          <input type="text" />
+        </form>
+        <div>Ola</div>
+      </MainContainer>
+      <GlobalStyle />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
